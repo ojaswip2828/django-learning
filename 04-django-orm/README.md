@@ -1,25 +1,70 @@
-# Django ORM - CRUD Operations
+# Django ORM - CRUD Operations, QuerySets, Filtering, Ordering, Aggregation & Annotation
 
 ## Overview
 
-This project demonstrates how to use the Django Object-Relational Mapper (ORM) to interact with a database using Python objects instead of writing raw SQL queries.
+This project demonstrates the use of the **Django Object-Relational Mapper (ORM)** to interact with a database using Python objects instead of writing raw SQL queries.
 
-The project implements basic CRUD operations:
+The project starts with basic database operations such as **Create, Retrieve, Update and Delete (CRUD)** and then progresses to more advanced Django ORM concepts including:
 
-- Create
-- Retrieve
-- Filter
-- Update
-- Delete
+- QuerySets
+- `get()`
+- `filter()`
+- `exclude()`
+- Lookup expressions
+- `Q` objects
+- AND, OR and NOT operations
+- `order_by()`
+- Ascending and descending ordering
+- Multiple-field ordering
+- `aggregate()`
+- `annotate()`
+- `Count()`
+- `Avg()`
+- `Sum()`
+- ForeignKey relationships
+- Django Shell
 
-## Technologies Used
+---
+
+# Topics Covered
+
+| No. | Topic |
+|---|---|
+| 1 | Django ORM |
+| 2 | Django Models |
+| 3 | Migrations |
+| 4 | Django Shell |
+| 5 | CRUD Operations |
+| 6 | QuerySets |
+| 7 | `get()` |
+| 8 | `filter()` |
+| 9 | `exclude()` |
+| 10 | Lookup Expressions |
+| 11 | Q Objects |
+| 12 | AND / OR / NOT |
+| 13 | `order_by()` |
+| 14 | Ascending / Descending Order |
+| 15 | Multiple Field Ordering |
+| 16 | `aggregate()` |
+| 17 | `annotate()` |
+| 18 | Count / Avg / Sum |
+| 19 | ForeignKey Relationships |
+
+---
+
+# Technologies Used
 
 - Python
 - Django
 - SQLite
 - Django ORM
+- Git
+- GitHub
+- PowerShell
 
-## Project Structure
+---
+
+# Project Structure
 
 ```text
 04-django-orm/
@@ -48,31 +93,3 @@ The project implements basic CRUD operations:
 │
 ├── manage.py
 └── README.md
-
-## CRUD CODE
-from blog.models import Blog
-
-# CREATE
-blog = Blog(
-    title="Learning Django ORM",
-    content="This blog was created using Django ORM.",
-    views=50,
-    url="https://example.com"
-)
-blog.save()
-
-# RETRIEVE
-Blog.objects.all()
-Blog.objects.get(id=1)
-
-# FILTER
-Blog.objects.filter(views=50)
-
-# UPDATE
-blog = Blog.objects.first()
-blog.views = 100
-blog.save()
-
-# DELETE
-blog = Blog.objects.first()
-blog.delete()
