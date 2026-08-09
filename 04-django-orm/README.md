@@ -48,3 +48,31 @@ The project implements basic CRUD operations:
 │
 ├── manage.py
 └── README.md
+
+## CRUD CODE
+from blog.models import Blog
+
+# CREATE
+blog = Blog(
+    title="Learning Django ORM",
+    content="This blog was created using Django ORM.",
+    views=50,
+    url="https://example.com"
+)
+blog.save()
+
+# RETRIEVE
+Blog.objects.all()
+Blog.objects.get(id=1)
+
+# FILTER
+Blog.objects.filter(views=50)
+
+# UPDATE
+blog = Blog.objects.first()
+blog.views = 100
+blog.save()
+
+# DELETE
+blog = Blog.objects.first()
+blog.delete()
