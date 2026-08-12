@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CBV Task List</title>
+</head>
+<body>
+
+    <h1>Task List - Class Based View</h1>
+
+    {% for task in tasks %}
+        <h2>{{ task.title }}</h2>
+        <p>{{ task.description }}</p>
+
+        {% if task.completed %}
+            <p>Status: Completed</p>
+        {% else %}
+            <p>Status: Pending</p>
+        {% endif %}
+
+        <hr>
+
+    {% empty %}
+        <p>No tasks available.</p>
+    {% endfor %}
+
+</body>
+</html>

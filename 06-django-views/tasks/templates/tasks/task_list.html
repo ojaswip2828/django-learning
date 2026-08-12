@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+</head>
+<body>
+
+    <h1>Task List</h1>
+
+    {% for task in tasks %}
+        <h2>{{ task.title }}</h2>
+        <p>{{ task.description }}</p>
+        <p>Completed: {{ task.completed }}</p>
+        <hr>
+    {% empty %}
+        <p>No tasks available.</p>
+        {% for task in tasks %}
+    <h2>
+        <a href="/tasks/{{ task.id }}/">
+            {{ task.title }}
+        </a>
+    </h2>
+
+    <p>{{ task.description }}</p>
+
+    <hr>
+{% endfor %}
+    {% endfor %}
+
+</body>
+</html>

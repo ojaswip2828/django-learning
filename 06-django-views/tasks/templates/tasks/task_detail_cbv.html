@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Details - CBV</title>
+</head>
+<body>
+
+    <h1>Task Details - Class Based View</h1>
+
+    <h2>{{ task.title }}</h2>
+
+    <p>{{ task.description }}</p>
+
+    <p>
+        Status:
+        {% if task.completed %}
+            Completed
+        {% else %}
+            Pending
+        {% endif %}
+    </p>
+
+    <hr>
+
+    <a href="/cbv/tasks/{{ task.id }}/edit/">Edit Task</a>
+    <br><br>
+
+    <a href="/cbv/tasks/{{ task.id }}/delete/">Delete Task</a>
+    <br><br>
+
+    <a href="/cbv/tasks/">Back to Task List</a>
+
+</body>
+</html>
