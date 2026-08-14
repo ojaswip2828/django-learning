@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Empty</title>
+</head>
+
+<body>
+
+    <h1>Subjects</h1>
+
+    {% for subject in subjects %}
+        <p>{{ subject }}</p>
+    {% empty %}
+        <p>No subjects found.</p>
+    {% endfor %}
+
+</body>
+</html>
