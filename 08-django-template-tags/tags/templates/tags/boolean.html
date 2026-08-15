@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boolean Operators</title>
+</head>
+<body>
+
+    <h1>Boolean Operators</h1>
+
+    <h2>AND</h2>
+
+    {% if age >= 18 and marks >= 40 %}
+        <p>Both conditions are true.</p>
+    {% endif %}
+
+
+    <h2>OR</h2>
+
+    {% if marks >= 90 or age >= 21 %}
+        <p>At least one condition is true.</p>
+    {% endif %}
+
+
+    <h2>NOT</h2>
+
+    {% if not marks < 40 %}
+        <p>The student has passed.</p>
+    {% endif %}
+
+
+    <h2>Comparison Operators</h2>
+
+    {% if marks == 85 %}
+        <p>== : Marks are equal to 85.</p>
+    {% endif %}
+
+    {% if marks != 50 %}
+        <p>!= : Marks are not equal to 50.</p>
+    {% endif %}
+
+    {% if marks < 100 %}
+        <p>&lt; : Marks are less than 100.</p>
+    {% endif %}
+
+    {% if marks > 80 %}
+        <p>&gt; : Marks are greater than 80.</p>
+    {% endif %}
+
+    {% if marks <= 85 %}
+        <p>&lt;= : Marks are less than or equal to 85.</p>
+    {% endif %}
+
+    {% if marks >= 85 %}
+        <p>&gt;= : Marks are greater than or equal to 85.</p>
+    {% endif %}
+
+
+    <h2>IN</h2>
+
+    {% if "Python" in courses %}
+        <p>Python is available in the course list.</p>
+    {% endif %}
+
+
+    <h2>NOT IN</h2>
+
+    {% if "Java" not in courses %}
+        <p>Java is not available in the course list.</p>
+    {% endif %}
+
+</body>
+</html>

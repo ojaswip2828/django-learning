@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Loop</title>
+</head>
+<body>
+
+    <h1>For Loop in Django</h1>
+
+    <h2>Basic For Loop</h2>
+
+    {% for student in students %}
+        <p>{{ student }}</p>
+    {% endfor %}
+
+
+    <h2>For Loop in Reverse</h2>
+
+    {% for student in students reversed %}
+        <p>{{ student }}</p>
+    {% endfor %}
+
+
+    <h2>Unpacking Tuples</h2>
+
+    {% for x, y in points %}
+        <p>Point: {{ x }}, {{ y }}</p>
+    {% endfor %}
+
+
+    <h2>Dictionary Items</h2>
+
+    {% for key, value in student_info.items %}
+        <p>{{ key }}: {{ value }}</p>
+    {% endfor %}
+
+</body>
+</html>

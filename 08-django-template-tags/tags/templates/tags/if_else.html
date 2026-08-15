@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>If Else</title>
+</head>
+<body>
+
+    <h1>If, Elif and Else in Django</h1>
+
+    <h2>Student Result</h2>
+
+    {% if marks >= 75 %}
+        <p>Distinction</p>
+
+    {% elif marks >= 40 %}
+        <p>Passed</p>
+
+    {% else %}
+        <p>Failed</p>
+    {% endif %}
+
+
+    <h2>Attendance</h2>
+
+    {% if attendance >= 75 %}
+        <p>Attendance requirement satisfied.</p>
+
+    {% else %}
+        <p>Attendance requirement not satisfied.</p>
+    {% endif %}
+
+
+    <h2>Backlog Status</h2>
+
+    {% if has_backlogs %}
+        <p>Student has backlogs.</p>
+
+    {% else %}
+        <p>Student has no backlogs.</p>
+    {% endif %}
+
+
+    <h2>Scholarship Eligibility</h2>
+
+    {% if marks >= 75 and attendance >= 75 and not has_backlogs %}
+        <p>Student is eligible for scholarship.</p>
+
+    {% else %}
+        <p>Student is not eligible for scholarship.</p>
+    {% endif %}
+
+    <h2>IS Operator</h2>
+
+{% if status is True %}
+    <p>Status is exactly True.</p>
+{% endif %}
+
+
+<h2>IS NOT Operator</h2>
+
+{% if optional_data is not None %}
+    <p>Data is available.</p>
+{% else %}
+    <p>Data is None.</p>
+{% endif %}
+
+</body>
+</html>
