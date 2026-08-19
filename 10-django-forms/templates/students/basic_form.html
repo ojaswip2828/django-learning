@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Django Form</title>
+</head>
+
+<body>
+
+    <h1>Basic Django Form</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+
+    <a href="{% url 'home' %}">← Back to Home</a>
+
+</body>
+</html>

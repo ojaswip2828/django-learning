@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Formset</title>
+</head>
+
+<body>
+
+    <h1>Django Formset</h1>
+
+    <p>
+        Enter details for multiple students using the same form.
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ formset.management_form }}
+
+        {% for form in formset %}
+            <fieldset>
+                <legend>Student {{ forloop.counter }}</legend>
+
+                {{ form.as_p }}
+            </fieldset>
+
+            <br>
+        {% endfor %}
+
+        <button type="submit">Submit All</button>
+    </form>
+
+    <br>
+
+    <a href="{% url 'home' %}">← Back to Home</a>
+
+</body>
+</html>

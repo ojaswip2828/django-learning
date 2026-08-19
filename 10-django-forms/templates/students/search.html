@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Students</title>
+</head>
+
+<body>
+
+    <h1>Search Students</h1>
+
+    <form method="GET">
+        <label for="q">Student Name:</label>
+
+        <input
+            type="text"
+            id="q"
+            name="q"
+            value="{{ query }}"
+            placeholder="Enter student name"
+        >
+
+        <button type="submit">Search</button>
+    </form>
+
+    <hr>
+
+    {% if query %}
+        <h2>Search Results for "{{ query }}"</h2>
+
+        {% if students %}
+            <ul>
+                {% for student in students %}
+                    <li>
+                        {{ student.name }} - {{ student.email }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No students found.</p>
+        {% endif %}
+
+    {% else %}
+        <p>Enter a student name to search.</p>
+    {% endif %}
+
+    <br>
+
+    <a href="{% url 'home' %}">← Back to Home</a>
+
+</body>
+</html>

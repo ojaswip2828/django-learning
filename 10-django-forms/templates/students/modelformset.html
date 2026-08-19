@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django ModelFormSet</title>
+</head>
+
+<body>
+
+    <h1>Django ModelFormSet</h1>
+
+    <p>
+        Add multiple students to the database using one page.
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ formset.management_form }}
+
+        {% for form in formset %}
+            <fieldset>
+                <legend>Student {{ forloop.counter }}</legend>
+
+                {{ form.as_p }}
+            </fieldset>
+
+            <br>
+        {% endfor %}
+
+        <button type="submit">Save All Students</button>
+    </form>
+
+    <br>
+
+    <a href="{% url 'home' %}">← Back to Home</a>
+
+</body>
+</html>

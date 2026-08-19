@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Forms</title>
+</head>
+
+<body>
+
+    <h1>Django Forms Project</h1>
+
+    <p>Select a topic to explore:</p>
+
+    <ul>
+        <li>
+            <a href="{% url 'basic_form' %}">
+                Basic Django Form
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'manual_form' %}">
+                Manual Form Rendering
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'submit_form' %}">
+                Form Submission & Validation
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'search_students' %}">
+                GET Search
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'model_form' %}">
+                ModelForm
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'formset' %}">
+                Formset
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'model_formset' %}">
+                ModelFormSet
+            </a>
+        </li>
+    </ul>
+
+</body>
+</html>

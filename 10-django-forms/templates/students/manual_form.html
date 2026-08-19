@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manual Form Rendering</title>
+</head>
+
+<body>
+
+    <h1>Manual Form Rendering</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        <div>
+            {{ form.name.errors }}
+            <label for="{{ form.name.id_for_label }}">
+                Student Name:
+            </label>
+            {{ form.name }}
+            <small>{{ form.name.help_text }}</small>
+        </div>
+
+        <br>
+
+        <div>
+            {{ form.email.errors }}
+            <label for="{{ form.email.id_for_label }}">
+                Email Address:
+            </label>
+            {{ form.email }}
+        </div>
+
+        <br>
+
+        <div>
+            {{ form.age.errors }}
+            <label for="{{ form.age.id_for_label }}">
+                Age:
+            </label>
+            {{ form.age }}
+        </div>
+
+        <br>
+
+        <div>
+            {{ form.course.errors }}
+            <label for="{{ form.course.id_for_label }}">
+                Course:
+            </label>
+            {{ form.course }}
+        </div>
+
+        <br>
+
+        <div>
+            {{ form.password.errors }}
+            <label for="{{ form.password.id_for_label }}">
+                Password:
+            </label>
+            {{ form.password }}
+        </div>
+
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+
+    <a href="{% url 'home' %}">← Back to Home</a>
+
+</body>
+</html>
