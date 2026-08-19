@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <h1>Welcome to your Dashboard</h1>
+
+    <p>
+        Logged in as:
+        <strong>{{ user.email }}</strong>
+    </p>
+
+    <p>
+        First name: {{ user.first_name }}
+    </p>
+
+    <p>
+        Last name: {{ user.last_name }}
+    </p>
+
+    <hr>
+
+    <h2>Available Actions</h2>
+
+    {% if perms.accounts.can_view_students %}
+        <p>
+            <a href="{% url 'students' %}">
+                View Students
+            </a>
+        </p>
+    {% endif %}
+
+    {% if perms.accounts.can_manage_students %}
+        <p>
+            <a href="{% url 'manage_students' %}">
+                Manage Students
+            </a>
+        </p>
+    {% endif %}
+
+    {% if not perms.accounts.can_view_students and not perms.accounts.can_manage_students %}
+        <p>
+            You don't currently have any student permissions.
+        </p>
+    {% endif %}
+
+    <hr>
+
+    <a href="{% url 'logout' %}">
+        Logout
+    </a>
+
+</body>
+</html>
